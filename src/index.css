@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.bodyColor {
+  background-color: rgba(238, 87, 132, 0.535);
+}
+.sideNav{
+  background-color: rgb(68,146,221);
+}
+.sideText {
+  color: rgb(238,87,132);
+}
+.signup {
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px !important;
+  border-radius: 18px !important;
+  border: 3px dashed rgb(238,87,132);
+}
+.signin {
+  background-color: rgb(255, 255, 255);
+  margin-top: 140px !important;
+  border-radius: 18px !important;
+  border: 3px dashed rgb(238,87,132);
+}
+.signText {
+  color: rgb(238,87,132);
+  font-size: 1.4em;
+}
+button {
+  background-color: rgb(238,87,132) !important;
+}
+.iconBorder {
+  border: 2px solid rgb(68,146,221) !important;
+  color: rgb(68,146,221);
+}
+.link {
+  color: rgb(68,146,221) !important;
+  text-decoration: none !important;
+}
