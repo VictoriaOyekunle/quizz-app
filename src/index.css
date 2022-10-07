@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .bodyColor {
-  background-color: rgba(238, 87, 132, 0.535);
+  background-color: rgb(236, 222, 226);
 }
 .sideNav{
   background-color: rgb(68,146,221);
@@ -21,16 +21,16 @@ code {
   color: rgb(238,87,132);
 }
 .signup {
-  background-color: rgb(255, 255, 255);
-  margin-top: 100px !important;
+  /* background-color: rgb(255, 255, 255); */
+  margin-top: 90px !important;
   border-radius: 18px !important;
-  border: 3px dashed rgb(238,87,132);
+  /* border: 3px dashed rgb(238,87,132); */
 }
 .signin {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   margin-top: 140px !important;
   border-radius: 18px !important;
-  border: 3px dashed rgb(238,87,132);
+  /* border: 3px dashed rgb(238,87,132); */
 }
 .signText {
   color: rgb(238,87,132);
@@ -43,7 +43,33 @@ button {
   border: 2px solid rgb(68,146,221) !important;
   color: rgb(68,146,221);
 }
-.link {
+.linkSign {
   color: rgb(68,146,221) !important;
-  text-decoration: none !important;
+  text-decoration: none;
+  font-size: 0.9em !important;
+}
+.link {
+  color: rgb(255, 255, 255)!important;
+  text-decoration: none;
+  font-size: 0.9em !important;
+}
+.link :hover{
+  color:rgb(238,87,132);
+  /* padding: 10px; */
+  font-weight: 600;
+  /* border-bottom: 1px solid rgb(238,87,132); */
+}
+.dashColor {
+  background-color: rgb(238,87,132);
+}
+.set {
+  margin: 80px !important;
+}
+.smallText {
+  font-weight: 400;
+  line-height: 15px;
+  font-size: 0.9em;
+}
+.submitTest {
+  margin-top: -55px;
 }

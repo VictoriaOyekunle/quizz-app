@@ -1,99 +1,68 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import "animate.css";
+import { useSelector } from "react-redux";
 const Admin = () => {
+  let currentUser = JSON.parse(localStorage.currentUser);
+ 
   return (
     <>
       <div className="container-fluid">
         <div className="row flex-nowrap">
           <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-              <a
-                href="/"
-                className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+              <Link
+                to="/"
+                className="d-flex align-items-center pb-3 link text-decoration-none"
               >
-                <span className="fs-5 d-none d-sm-inline">Menu</span>
-              </a>
+                <i className=" fs-5 fa fa-bars" aria-hidden="true"></i>
+                <span className="fs-5 d-none d-sm-inline my-4 mx-2">
+                  My School Quiz
+                </span>
+              </Link>
               <ul
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                 id="menu"
               >
                 <li className="nav-item">
-                  <a href="#" className="nav-link align-middle px-0">
+                  <Link to="/" className="nav-link align-middle px-0 link mt-5">
                     <i className="fa fa-home" aria-hidden="true"></i>{" "}
                     <span className="ms-1 d-none d-sm-inline">Home</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#submenu1"
+                  <Link
+                    to="/"
                     data-bs-toggle="collapse"
-                    className="nav-link px-0 align-middle"
+                    className="nav-link px-0 align-middle link my-2"
                   >
                     <i className="fa fa-dashboard" aria-hidden="true"></i>{" "}
                     <span className="ms-1 d-none d-sm-inline">Dashboard</span>{" "}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="nav-link px-0 align-middle">
-                    <i className="fa-list"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Student List</span>
-                  </a>
+                  <Link to="/" className="nav-link px-0 align-middle link my-2">
+                    <i className="fa fa-user" aria-hidden="true"></i>{" "}
+                    <span className="ms-1 d-none d-sm-inline">My Profile</span>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#submenu2"
-                    data-bs-toggle="collapse"
-                    className="nav-link px-0 align-middle "
-                  >
-                    <i className="fs-4 bi-bootstrap"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Bootstrap</span>
-                  </a>
+                  <Link to="/setQuestion" className="nav-link px-0 align-middle link my-2">
+                    <i className="fa fa-plus-circle" aria-hidden="true"></i>{" "}
+                    <span className="ms-1 d-none d-sm-inline">Add Question</span>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#submenu3"
-                    data-bs-toggle="collapse"
-                    className="nav-link px-0 align-middle"
-                  >
-                    <i className="fs-4 bi-grid"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Products</span>{" "}
-                  </a>
-                  <ul
-                    className="collapse nav flex-column ms-1"
-                    id="submenu3"
-                    data-bs-parent="#menu"
-                  >
-                    <li className="w-100">
-                      <a href="#" className="nav-link px-0">
-                        {" "}
-                        <span className="d-none d-sm-inline">Product</span> 1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="nav-link px-0">
-                        {" "}
-                        <span className="d-none d-sm-inline">Product</span> 2
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="nav-link px-0">
-                        {" "}
-                        <span className="d-none d-sm-inline">Product</span> 3
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="nav-link px-0">
-                        {" "}
-                        <span className="d-none d-sm-inline">Product</span> 4
-                      </a>
-                    </li>
-                  </ul>
+                  <Link to="/" className="nav-link px-0 align-middle link my-2">
+                    <i className="fa fa-folder" aria-hidden="true"></i>{" "}
+                    <span className="ms-1 d-none d-sm-inline">Documents</span>{" "}
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-people"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Customers</span>{" "}
-                  </a>
+                  <Link to="/" className="nav-link px-0 align-middle link my-2">
+                    <i className="fa fa-cog" aria-hidden="true"></i>{" "}
+                    <span className="ms-1 d-none d-sm-inline">Settings</span>{" "}
+                  </Link>
                 </li>
               </ul>
               <hr />
@@ -142,13 +111,56 @@ const Admin = () => {
               </div>
             </div>
           </div>
-          <div className="col py-3">
-            <div className="container">
+          <div className="col py-3 bg-light">
+            <div className="container my-4">
               <div className="row">
-                <div className="col-md-6"></div>
                 <div className="col-md-6">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A harum nesciunt maiores consequatur perferendis nobis cum accusantium consequuntur. Distinctio tenetur dolor impedit porro officia qui modi, culpa iusto tempore a.</p>
+                  <h5>Welcome {currentUser.firstname}...</h5>
                 </div>
+                <div className="col-md-6 text-end">
+                  <Link to="/" className="text-dark">
+                    <i
+                      className="fa fs-5 fa-address-card mx-4"
+                      aria-hidden="true"
+                    ></i>
+                  </Link>
+                  <Link to="/" className="text-dark">
+                    <i
+                      className="fa fs-5 fa-bell-o mx-4 "
+                      aria-hidden="true"
+                    ></i>
+                  </Link>
+                  <Link to="/" className="text-dark">
+                    <i
+                      className="fa fs-5 fa-envelope mx-4 "
+                      aria-hidden="true"
+                    ></i>
+                  </Link>
+                  <Link to="/" className="text-dark">
+                    <i className="fa fs-5 fa-cog mx-4 " aria-hidden="true"></i>
+                  </Link>
+                  <small className="rounded-circle border">images</small>
+                </div>
+              </div>
+            </div>
+            <div className="container">
+              <div className="row d-flex justify-content-between">
+                {/* <div className="col-md-6 shadow rounded bg-danger"></div> */}
+                <Link to="/setQuestion" className="text-decoration-none">
+                  <div className="col-md-12 animate__animated animate__bounce animate__delay-2s bg-dark text-center p-5 text-white rounded">
+                    <h4> Set your Question <i className="fa fa-plus-circle" aria-hidden="true"></i></h4>
+                  </div>
+                </Link>
+                <Link to="/start" className="text-decoration-none my-3">
+                  <div className="col-md-12 animate__animated animate__bounce animate__delay-2s bg-primary text-center p-5 text-white rounded">
+                    <h4>Take Quiz Test</h4>
+                  </div>
+                </Link>
+                <Link to="/" className="text-decoration-none">
+                  <div className="col-md-12 animate__animated animate__bounce animate__delay-2s dashColor text-center p-5 text-white rounded">
+                    <h4>Set your Question</h4>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

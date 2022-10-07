@@ -8,13 +8,21 @@ import '../node_modules/bootstrap/dist/js/bootstrap.js'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from "react-redux";
+import studentReducer from "./redux/student";
 
+let store = configureStore({
+  reducer: { students:studentReducer }
+});
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+   </Provider>
   </React.StrictMode>
 );
 
